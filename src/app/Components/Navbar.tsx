@@ -1,16 +1,16 @@
-import React from 'react'
+'use client' // Optional if using client-side interactions
+
+import Link from 'next/link'
 
 const Navbar = () => {
   return (
-    <nav className="bg-black shadow-md px-6 py-4 flex items-center justify-between">
-      <div className="text-2xl font-bold text-purple-600">Portfolio</div>
-
-      {/* Navigation Links */}
-      <ul className="hidden sm:flex sm:items-center sm:gap-6 absolute sm:static top-16 left-0 w-full sm:w-auto bg-black sm:bg-transparent px-6 sm:px-0 z-10">
-        <li><a href="#" className="block py-2 sm:py-0 text-purple-600 hover:text-purple-300">Home</a></li>
-        <li><a href="#" className="block py-2 sm:py-0 text-purple-600 hover:text-purple-300">About</a></li>
-        <li><a href="#" className="block py-2 sm:py-0 text-purple-600 hover:text-purple-300">Projects</a></li>
-        <li><a href="#" className="block py-2 sm:py-0 text-purple-600 hover:text-purple-300">Contact</a></li>
+    <nav className="fixed bg-[var(--color-background)] w-full shadow-md px-6 py-4 flex items-center justify-between">
+      <div className="text-2xl font-bold text-[var(--color-primary)]">Portfolio</div>
+      <ul className="hidden sm:flex sm:items-center sm:gap-6 absolute sm:static top-16 left-0 w-full sm:w-auto bg-[var(--color-background)] px-6 sm:px-0 z-10">
+        <li><Link href="/" className="block py-2 sm:py-0 text-[var(--color-primary)] hover:text-[var(--color-accent)]">Home</Link></li>
+        <li><Link href="/about" className="block py-2 sm:py-0 text-[var(--color-primary)] hover:text-[var(--color-accent)]">About</Link></li>
+        <li><Link href="/projects" className="block py-2 sm:py-0 text-[var(--color-primary)] hover:text-[var(--color-accent)]">Projects</Link></li>
+        <li><Link href="/contact" className="block py-2 sm:py-0 text-[var(--color-primary)] hover:text-[var(--color-accent)]">Contact</Link></li>
       </ul>
     </nav>
   )
