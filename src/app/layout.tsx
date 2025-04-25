@@ -1,5 +1,7 @@
+import React from "react";
 import "./globals.css";
 import Navbar from "./Components/Navbar";
+import PageChanger from "./Components/PageChanger";
 
 export const metadata = {
   title: "Mathias Larsen - Frontend Developer",
@@ -15,6 +17,7 @@ export default function RootLayout({
     <html lang="da">
       <body>
         <Navbar />
+        <PageChanger />
         {children}
       </body>
     </html>

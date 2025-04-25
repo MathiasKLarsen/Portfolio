@@ -1,5 +1,3 @@
-'use client' // Optional if using client-side interactions
-
 import Link from 'next/link'
 
 const Navbar = () => {
