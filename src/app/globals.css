@@ -6,9 +6,14 @@
   --color-background: #ffffff;
   --color-foreground: #171717;
   --color-primary: #7C3AED;
-  --color-accent: #A78BFA;
+  --color-hover: #A78BFA;
   --color-surface: #f1f5f9;
-  --color-muted: #64748B;
+  --color-slider: green;
+  --color-slider2: red;
+  --color-slider3: blue;
+  /* --color-slider: #4f0079; */
+  /* --color-slider2: #5c008d; */
+  /* --color-slider3: #67009a; */
 
   /* Fonts */
   --font-sans: 'Geist Sans', system-ui, sans-serif;
