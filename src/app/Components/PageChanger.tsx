@@ -8,20 +8,22 @@ const PageChanger = () => {
   const pathname = usePathname();
   const [isAnimating, setIsAnimating] = useState(false);
   const isFirstLoad = useRef(true); // Track if it's the first time loading the page
+  const colors = ['var(--color-slider)', 'var(--color-slider2)', 'var(--color-slider3)']; // List of colors
 
   useEffect(() => {
     if (isFirstLoad.current) {
-      isFirstLoad.current = false; // After first render, mark it as not first load
-      return; // Skip animation on first page load
+      // First load, skip animation for content
+      isFirstLoad.current = false;
+      return;
     }
 
     if (!pathname) return; // Safety check
-
     setIsAnimating(true); // Start animation when pathname changes
 
+    // Set a timeout for how long the animation should last
     const timeout = setTimeout(() => {
-      setIsAnimating(false); // Stop animation after it's done
-    }, 1800); // Slightly shorter to match faster disappearance
+      setIsAnimating(false); // End animation after a short period
+    }, 1500); // Total duration of the animation (1.5 seconds)
 
     return () => clearTimeout(timeout); // Cleanup timeout when component unmounts
   }, [pathname]);
@@ -29,36 +31,81 @@ const PageChanger = () => {
   return (
     <AnimatePresence mode="wait">
       {isAnimating && (
-        <motion.div
-          initial={{ 
-            x: '-100%', // Start off-screen to the left
-            backgroundColor: 'var(--color-slider)', // Start with first color
-            opacity: 1 
-          }}
-          animate={{ 
-            x: '0%', // Slide into center screen
-            backgroundColor: [
-              'var(--color-slider)',  
-              'var(--color-slider2)', 
-              'var(--color-slider3)'  
-            ],
-            opacity: 1,
-          }}
-          exit={{ 
-            x: '100%', // Slide out off-screen to the right
-            opacity: 0 // Fade out
-          }}
-          transition={{
-            x: { duration: 1.2, ease: 'easeInOut' }, // Slide in timing (still smooth)
-            backgroundColor: {
-              duration: 1.5, // Color transition timing
-              times: [0, 0.5, 1], 
-              ease: 'easeInOut',
-            },
-            opacity: { duration: 0.4, ease: 'easeOut' }, // <-- Fade out faster
-          }}
-          className="fixed top-0 left-0 w-full h-full z-[9999]"
-        />
+        <>
+          {/* First Box */}
+          <motion.div
+            key="first-box"
+            initial={{
+              x: '-110%', // Start off-screen to the left
+              opacity: 0, // Fade out initially
+              backgroundColor: colors[0], // Set color for the box
+            }}
+            animate={{
+              x: 0, // Smooth slide in from the left
+              opacity: 1, // Fade in to full opacity
+              backgroundColor: colors[0], // Apply the color
+            }}
+            exit={{
+              x: '-110%', // Slide out to the left when exiting
+              opacity: 0, // Fade out to transparent
+            }}
+            transition={{
+              duration: 0.7,
+              ease: 'easeOut',
+            }}
+            className="page-transition" // Use CSS class
+          />
+
+          {/* Second Box */}
+          <motion.div
+            key="second-box"
+            initial={{
+              x: '-110%', // Start off-screen to the left
+              opacity: 0,
+              backgroundColor: colors[1],
+            }}
+            animate={{
+              x: 0,
+              opacity: 1,
+              backgroundColor: colors[1],
+            }}
+            exit={{
+              x: '-110%',
+              opacity: 0,
+            }}
+            transition={{
+              duration: 0.7,
+              delay: 0.3, // Delay for a staggered effect
+              ease: 'easeOut',
+            }}
+            className="page-transition" // Use CSS class
+          />
+
+          {/* Third Box */}
+          <motion.div
+            key="third-box"
+            initial={{
+              x: '-110%', // Start off-screen to the left
+              opacity: 0,
+              backgroundColor: colors[2],
+            }}
+            animate={{
+              x: 0,
+              opacity: 1,
+              backgroundColor: colors[2],
+            }}
+            exit={{
+              x: '-110%',
+              opacity: 0,
+            }}
+            transition={{
+              duration: 0.7,
+              delay: 0.6, // Delay to make the transitions overlap
+              ease: 'easeOut',
+            }}
+            className="page-transition" // Use CSS class
+          />
+        </>
       )}
     </AnimatePresence>
   );

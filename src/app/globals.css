@@ -8,12 +8,12 @@
   --color-primary: #7C3AED;
   --color-hover: #A78BFA;
   --color-surface: #f1f5f9;
-  --color-slider: green;
-  --color-slider2: red;
-  --color-slider3: blue;
-  /* --color-slider: #4f0079; */
-  /* --color-slider2: #5c008d; */
-  /* --color-slider3: #67009a; */
+  --color-slider: #4f0079;
+  --color-slider2: #5c008d;
+  --color-slider3: #67009a;
+  /* --color-slider: red;
+  --color-slider2: green;
+  --color-slider3: blue; */
 
   /* Fonts */
   --font-sans: 'Geist Sans', system-ui, sans-serif;
@@ -33,4 +33,20 @@ body {
   background-color: var(--color-background);
   color: var(--color-foreground);
   font-family: var(--font-sans);
+}
+
+.page-transition {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.gradient-text {
+  background: linear-gradient(to bottom, #4f0079, #5c008d, #67009a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }

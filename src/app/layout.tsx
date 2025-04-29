@@ -17,9 +17,10 @@ export default function RootLayout({
     <html lang="da">
       <body>
         <Navbar />
-        <PageChanger />
         {children}
+        <PageChanger /> {/* Moved here to ensure it's above the rest */}
       </body>
     </html>
   );
 }
+
