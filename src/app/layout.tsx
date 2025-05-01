@@ -2,6 +2,7 @@ import React from "react";
 import "./globals.css";
 import Navbar from "./Components/Navbar";
 import PageChanger from "./Components/PageChanger";
+import Footer from "./Components/Footer";
 
 export const metadata = {
   title: "Mathias Larsen - Frontend Developer",
@@ -18,6 +19,7 @@ export default function RootLayout({
       <body>
         <Navbar />
         {children}
+        <Footer />
         <PageChanger /> {/* Moved here to ensure it's above the rest */}
       </body>
     </html>

@@ -50,3 +50,7 @@ body {
   background-clip: text;
   color: transparent;
 }
+
+.gradient-nav {
+  background-image: linear-gradient(to bottom, #39026c, #0a0a0a);
+}

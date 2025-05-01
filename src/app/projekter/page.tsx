@@ -2,11 +2,11 @@ import React from 'react'
 
 const Page = () => {
   return (
-    <div className="flex items-center justify-center h-screen bg-[var(--color-background)]">
+    <section className="flex items-center justify-center h-screen bg-[var(--color-background)]">
       <h1 className="text-[var(--color-primary)] text-4xl font-bold">
         Projects
       </h1>
-    </div>
+    </section>
   )
 }
 
