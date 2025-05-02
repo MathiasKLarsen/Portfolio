@@ -4,14 +4,14 @@ import Image from 'next/image'
 const Page = () => {
 
     const logo = [
-        { src:"/IMG/js.png", alt:'JavaScript', label:'JavaScript' },
-        { src:"/IMG/ts.png", alt:'TypeScript', label:'TypeScript' },
-        { src:"/IMG/react.png", alt:'React', label:'React' },
-        { src:"/IMG/nextjs.png", alt:'Next.js', label:'Next.js' },
-        { src:"/IMG/tailwind.png", alt:'Tailwind', label:'Tailwind' },
-        { src:"/IMG/bootstrap.png", alt:'Bootstrap', label:'Bootstrap' },
-        { src:"/IMG/mysql.png", alt:'SQL', label:'SQL' },
-        { src:"/IMG/mongodb.png", alt:'MongoDB', label:'MongoDB' },
+        { src:"/IMG/skills/js.png", alt:'JavaScript', label:'JavaScript' },
+        { src:"/IMG/skills/ts.png", alt:'TypeScript', label:'TypeScript' },
+        { src:"/IMG/skills/react.png", alt:'React', label:'React' },
+        { src:"/IMG/skills/nextjs.png", alt:'Next.js', label:'Next.js' },
+        { src:"/IMG/skills/tailwind.png", alt:'Tailwind', label:'Tailwind' },
+        { src:"/IMG/skills/bootstrap.png", alt:'Bootstrap', label:'Bootstrap' },
+        { src:"/IMG/skills/mysql.png", alt:'SQL', label:'SQL' },
+        { src:"/IMG/skills/mongodb.png", alt:'MongoDB', label:'MongoDB' },
     ]
 
   return (
